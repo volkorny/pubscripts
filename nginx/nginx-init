@@ -334,8 +334,9 @@ case "$1" in
 #	sleep 1
 #	start
 #        ;;
- restart)
+  restart)
 	quietupgrade
+	;;
   reload)
 	$1
 	;;
