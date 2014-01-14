@@ -256,6 +256,7 @@ quietupgrade() {
         isAlive=$?
         if [ "${isAlive}" -eq $TRUE ]; then
 		kill -USR2 `cat $PIDSPATH/$PIDFILE`
+		sleep 2
 		kill -WINCH `cat $PIDSPATH/$PIDFILE.oldbin`
 		
 		isRunning
