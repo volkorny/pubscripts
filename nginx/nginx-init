@@ -2,7 +2,7 @@
 ### BEGIN INIT INFO
 # Provides:          nginx
 # Required-Start:    $remote_fs $syslog
-# Required-Stop:     $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # Short-Description: nginx init.d dash script for Ubuntu <=9.10.
@@ -256,7 +256,7 @@ quietupgrade() {
         isAlive=$?
         if [ "${isAlive}" -eq $TRUE ]; then
 		kill -USR2 `cat $PIDSPATH/$PIDFILE`
-		sleep 2
+		sleep 5
 		kill -WINCH `cat $PIDSPATH/$PIDFILE.oldbin`
 		
 		isRunning
