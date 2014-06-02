@@ -206,7 +206,7 @@ start() {
                 log_end_msg $SCRIPT_ERROR
         else
                 start-stop-daemon --start --quiet --chuid $RUNAS --pidfile $PIDSPATH/$PIDFILE --exec $DAEMON \
-                -- -c $NGINX_CONF_FILE
+                -- -p /opt/nginx -c $NGINX_CONF_FILE
                 setFilePerms
                 log_end_msg $SCRIPT_OK
         fi
